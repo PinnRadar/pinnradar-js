@@ -1,0 +1,25 @@
+{
+  "name": "pinnradar",
+  "version": "0.1.0",
+  "description": "Node.js client for the PinnRadar API: real-time Pinnacle odds, live and prematch markets, dropping-odds alerts over SSE.",
+  "type": "module",
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
+    }
+  },
+  "files": ["src", "README.md", "LICENSE"],
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": ["pinnacle", "odds", "odds-api", "pinnacle-api", "sports-betting", "live-odds", "dropping-odds", "sports-data", "no-vig", "sse"],
+  "homepage": "https://pinnradar.com",
+  "repository": { "type": "git", "url": "git+https://github.com/PinnRadar/pinnradar-js.git" },
+  "bugs": { "url": "https://github.com/PinnRadar/pinnradar-js/issues" },
+  "author": "PinnRadar <info@pinnradar.com>",
+  "license": "MIT"
+}

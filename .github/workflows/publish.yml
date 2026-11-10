@@ -1,0 +1,24 @@
+# Publishes to npm when a GitHub release is published. The npm token lives
+# only in this repo's secret NPM_TOKEN (Settings > Secrets > Actions); it is
+# never written anywhere else. Provenance links each version to this repo.
+name: Publish
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org
+      - run: npm test
+      - run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
