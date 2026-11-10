@@ -1,6 +1,6 @@
-# Publishes to npm when a version tag (v*) is pushed. The npm token lives
-# only in this repo's secret NPM_TOKEN (Settings > Secrets > Actions); it is
-# never written anywhere else. Provenance links each version to this repo.
+# Publishes to npm when a version tag (v*) is pushed. Uses npm trusted
+# publishing (OIDC): no token is stored anywhere. Configured on npmjs.com for
+# PinnRadar/pinnradar-js, workflow publish.yml.
 name: Publish
 on:
   push:
@@ -18,7 +18,6 @@ jobs:
         with:
           node-version: 22
           registry-url: https://registry.npmjs.org
+      - run: npm install -g npm@latest
       - run: npm test
       - run: npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
