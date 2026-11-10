@@ -1,10 +1,10 @@
-# Publishes to npm when a GitHub release is published. The npm token lives
+# Publishes to npm when a version tag (v*) is pushed. The npm token lives
 # only in this repo's secret NPM_TOKEN (Settings > Secrets > Actions); it is
 # never written anywhere else. Provenance links each version to this repo.
 name: Publish
 on:
-  release:
-    types: [published]
+  push:
+    tags: ["v*"]
   workflow_dispatch:
 jobs:
   publish:
