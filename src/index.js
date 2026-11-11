@@ -1,7 +1,7 @@
 // PinnRadar API client for Node.js 18+ and modern browsers. No dependencies.
 // Docs: https://pinnradar.com/docs
 
-export const VERSION = "0.1.0";
+export const VERSION = "0.1.1";
 const DEFAULT_BASE_URL = "https://pinnradar.com";
 
 export class PinnRadarError extends Error {
@@ -169,7 +169,8 @@ export class PinnRadar {
   }
 
   /**
-   * Full board for one sport. `eventType` is "live" (default) or "prematch".
+   * Live board for one sport. For prematch use `prematchFixtures()` / `prematchMarkets()`:
+   * this endpoint answers `eventType: "prematch"` with 503 prematch_disabled.
    * Pass the previous answer's `last` as `since` to receive only what changed.
    */
   markets({ sportId, eventType = "live", since, includeSpecials } = {}, opts) {

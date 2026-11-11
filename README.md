@@ -1,6 +1,8 @@
-# pinnradar
+# pinnradar: Pinnacle odds API client for Node.js
 
 Node.js client for the [PinnRadar API](https://pinnradar.com): real-time **Pinnacle odds** as JSON. Live and prematch markets (moneyline, spreads, totals, team totals, every period), dropping-odds alerts over Server-Sent Events, and no-vig helpers.
+
+Pinnacle closed its public API to most users in July 2025. PinnRadar is an independent service (not affiliated with Pinnacle) that serves Pinnacle's live and prematch prices over a simple REST API and push streams, with a free tier.
 
 - Zero dependencies, Node 18+ (uses the built-in `fetch`), works in modern browsers too
 - TypeScript types included

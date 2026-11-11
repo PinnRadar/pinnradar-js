@@ -1,6 +1,6 @@
 {
   "name": "pinnradar",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Node.js client for the PinnRadar API: real-time Pinnacle odds, live and prematch markets, dropping-odds alerts over SSE.",
   "type": "module",
   "main": "./src/index.js",
